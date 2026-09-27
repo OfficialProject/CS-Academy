@@ -15,7 +15,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
         </div>
       );
     }
-    return this.children;
+    return this.props.children;
   }
 }
 
