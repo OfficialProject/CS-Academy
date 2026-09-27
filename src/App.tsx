@@ -3,21 +3,21 @@ import { SignInPage, type Testimonial } from "@/components/ui/sign-in";
 const testimonials: Testimonial[] = [
   {
     avatarSrc:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=160&q=80",
+      "https://unsplash.com",
     name: "Alex Morgan",
     handle: "@alexmorgan",
     text: "The experience is incredibly smooth.",
   },
   {
     avatarSrc:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80",
+      "https://unsplash.com",
     name: "Sarah Chen",
     handle: "@sarahchen",
     text: "Everything I need is right where I expect it.",
   },
   {
     avatarSrc:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80",
+      "https://unsplash.com",
     name: "Jordan Lee",
     handle: "@jordanlee",
     text: "A genuinely clean and effortless experience.",
@@ -34,7 +34,7 @@ function App() {
           </span>
         }
         description="Sign in to continue to your account."
-        heroImageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85"
+        heroImageSrc="https://unsplash.com"
         testimonials={testimonials}
         onSignIn={(event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault();
