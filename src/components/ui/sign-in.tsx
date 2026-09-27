@@ -1,5 +1,7 @@
 import * as React from "react";
-import { Globe, Eye, EyeOff, Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import googleIcon from "../../assets/google.svg";
+import steamIcon from "../../assets/steam.svg";
 
 export interface Testimonial {
   avatarSrc: string;
@@ -16,6 +18,7 @@ interface SignInPageProps {
   isLoading?: boolean;
   onSignIn?: (event: React.FormEvent<HTMLFormElement>) => void;
   onGoogleSignIn?: () => void;
+  onSteamSignIn?: () => void;
   onResetPassword?: () => void;
   onCreateAccount?: () => void;
 }
@@ -28,6 +31,7 @@ export function SignInPage({
   isLoading = false,
   onSignIn,
   onGoogleSignIn,
+  onSteamSignIn,
   onResetPassword,
   onCreateAccount,
 }: SignInPageProps) {
@@ -137,14 +141,26 @@ export function SignInPage({
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={onGoogleSignIn}
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-input bg-background hover:bg-accent text-foreground h-10 w-full cursor-pointer"
-          >
-            <Globe className="mr-2 h-4 w-4 text-red-500" />
-            Continue with Google
-          </button>
+          {/* Clean Side-by-Side SVG Icons */}
+          <div className="flex flex-row gap-3 w-full">
+            <button
+              type="button"
+              onClick={onGoogleSignIn}
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-input bg-background hover:bg-accent text-foreground h-10 w-full cursor-pointer"
+            >
+              <img src={googleIcon} alt="Google" className="mr-2 h-4 w-4" />
+              Google
+            </button>
+
+            <button
+              type="button"
+              onClick={onSteamSignIn}
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-input bg-background hover:bg-accent text-foreground h-10 w-full cursor-pointer"
+            >
+              <img src={steamIcon} alt="Steam" className="mr-2 h-4 w-4" />
+              Steam
+            </button>
+          </div>
 
           <p className="text-center text-xs text-muted-foreground pt-1">
             New to our platform?{" "}
