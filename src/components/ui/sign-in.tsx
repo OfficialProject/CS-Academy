@@ -44,8 +44,11 @@ export function SignInPage({
 
   return (
     <div className="h-full w-full grid grid-cols-1 md:grid-cols-2 bg-background text-foreground overflow-hidden">
+      
+      {/* Left side Form Area */}
       <div className="flex flex-col justify-center px-4 py-6 sm:px-6 md:px-12 xl:px-24 h-full overflow-y-auto">
         <div className="mx-auto w-full max-w-sm space-y-5">
+          
           <div className="space-y-1.5">
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {title}
@@ -153,9 +156,11 @@ export function SignInPage({
               Create Account
             </button>
           </p>
+
         </div>
       </div>
 
+      {/* Right side Hero / Testimonial Area */}
       <div className="hidden md:block relative h-full bg-muted overflow-hidden">
         {heroImageSrc && (
           <img
@@ -202,6 +207,7 @@ export function SignInPage({
           </div>
         )}
       </div>
+
     </div>
   );
 }
