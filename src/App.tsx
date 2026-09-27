@@ -36,7 +36,7 @@ function App() {
         description="Sign in to continue to your account."
         heroImageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85"
         testimonials={testimonials}
-        onSignIn={(event) => {
+        onSignIn={(event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault();
           console.log("Sign in submitted");
         }}
