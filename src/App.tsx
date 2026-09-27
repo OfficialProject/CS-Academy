@@ -1,23 +1,5 @@
 import { SignInPage, type Testimonial } from "@/components/ui/sign-in";
-import { useEffect, Component, type ReactNode } from "react";
-
-// Robust client-side firewall to prevent any missing assets from triggering white screens
-class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
-  state = { hasError: false };
-  static getDerivedStateFromError() { return { hasError: true }; }
-  componentDidCatch(error: any) { console.error("App Render Error Captured:", error); }
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="flex h-screen w-screen flex-col items-center justify-center bg-zinc-950 p-6 text-center text-white">
-          <h2 className="text-xl font-bold tracking-tight text-red-400">A rendering crash was intercepted</h2>
-          <p className="mt-2 text-sm text-zinc-400">Check your browser inspector dashboard console tab for stack details.</p>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
+import { useEffect } from "react";
 
 const testimonials: Testimonial[] = [
   {
@@ -56,25 +38,24 @@ function App() {
   }, []);
 
   return (
-    <ErrorBoundary>
-      <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-background text-foreground flex flex-col">
-        <div className="flex-1 h-full w-full overflow-hidden">
-          <SignInPage
-            title={<span>Welcome <span className="text-violet-400">back.</span></span>}
-            description="Sign in to continue to your account."
-            heroImageSrc="https://unsplash.com"
-            testimonials={testimonials}
-            onSignIn={(event: React.FormEvent<HTMLFormElement>) => {
-              event.preventDefault();
-              console.log("Sign in submitted");
-            }}
-            onGoogleSignIn={() => console.log("Google sign in selected")}
-            onResetPassword={() => console.log("Reset password selected")}
-            onCreateAccount={() => console.log("Create account selected")}
-          />
-        </div>
+    <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-background text-foreground flex flex-col">
+      <div className="flex-1 h-full w-full overflow-hidden">
+        <SignInPage
+          title={<span>Welcome <span className="text-violet-400">back.</span></span>}
+          description="Sign in to continue to your account."
+          heroImageSrc="https://unsplash.com"
+          testimonials={testimonials}
+          onSignIn={(event: React.FormEvent<HTMLFormElement>) => {
+            event.preventDefault();
+            console.log("Sign in submitted");
+          }}
+          onGoogleSignIn={() => console.log("Google sign in selected")}
+          onSteamSignIn={() => console.log("Steam OAuth workflow initiated")}
+          onResetPassword={() => console.log("Reset password selected")}
+          onCreateAccount={() => console.log("Create account selected")}
+        />
       </div>
-    </ErrorBoundary>
+    </div>
   );
 }
 
