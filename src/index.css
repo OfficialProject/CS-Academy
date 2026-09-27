@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border, 240 5.9% 90%));
+  --color-input: hsl(var(--input, 240 5.9% 90%));
+  --color-ring: hsl(var(--ring, 240 10% 3.9%));
+  --color-background: hsl(var(--background, 0 0% 100%));
+  --color-foreground: hsl(var(--foreground, 240 10% 3.9%));
+  --color-primary: hsl(var(--primary, 240 5.9% 10%));
+  --color-primary-foreground: hsl(var(--primary-foreground, 0 0% 98%));
+  --color-muted: hsl(var(--muted, 240 4.8% 95.9%));
+  --color-muted-foreground: hsl(var(--muted-foreground, 240 3.8% 46.1%));
+  --color-accent: hsl(var(--accent, 240 4.8% 95.9%));
+  --color-accent-foreground: hsl(var(--accent-foreground, 240 10% 3.9%));
+  
+  --radius-lg: var(--radius, 0.5rem);
+  --radius-md: calc(var(--radius, 0.5rem) - 2px);
+  --radius-sm: calc(var(--radius, 0.5rem) - 4px);
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 10% 3.9%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 10% 3.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 10% 3.9%;
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
