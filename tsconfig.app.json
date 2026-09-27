@@ -6,6 +6,13 @@
     "module": "esnext",
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
+    
+    /* Path Alias Configuration */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     "skipLibCheck": true,
 
     /* Bundler mode */
