@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Chrome, Eye, EyeOff, Loader2 } from "lucide-react";
+import { Globe, Eye, EyeOff, Loader2 } from "lucide-react";
 
 export interface Testimonial {
   avatarSrc: string;
@@ -142,7 +142,7 @@ export function SignInPage({
             onClick={onGoogleSignIn}
             className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-input bg-background hover:bg-accent text-foreground h-10 w-full cursor-pointer"
           >
-            <Chrome className="mr-2 h-4 w-4 text-red-500" />
+            <Globe className="mr-2 h-4 w-4 text-red-500" />
             Continue with Google
           </button>
 
